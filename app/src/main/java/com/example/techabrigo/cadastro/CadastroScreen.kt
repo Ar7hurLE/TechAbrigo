@@ -80,9 +80,8 @@ fun CadastroScreen(cadastroScreenViewModel: CadastroScreenViewModel, navControll
         Box(
             modifier = Modifier.fillMaxSize()
         ) {
-        }
-        Column(
-            modifier = Modifier.fillMaxWidth()
+            Column(
+           modifier = Modifier.fillMaxWidth()
         ) {
             Column(
                 horizontalAlignment = Alignment.CenterHorizontally,
@@ -97,12 +96,11 @@ fun CadastroScreen(cadastroScreenViewModel: CadastroScreenViewModel, navControll
                             text = stringResource(id = R.string.cadastro),
                             color = Color.White,
                             fontFamily = BlackOpsOne
-                            //fontWeight = FontWeight.Bold
                         )
                     },
                     navigationIcon = {
                         IconButton(
-                            onClick = {navController.navigate("login")}
+                            onClick = { navController.navigate("login") }
                         ) {
                             Icon(
                                 imageVector = Icons.Default.KeyboardArrowLeft,
@@ -178,7 +176,7 @@ fun CadastroScreen(cadastroScreenViewModel: CadastroScreenViewModel, navControll
                         {
                             RadioButton(
                                 selected = sexo == stringResource(id = R.string.sexM),
-                                onClick = {cadastroScreenViewModel.onSexoChanged("Masculino")},
+                                onClick = { cadastroScreenViewModel.onSexoChanged("Masculino") },
                                 colors = RadioButtonDefaults.colors(
                                     unselectedColor = Color.Gray,
                                     selectedColor = Color.Magenta
@@ -191,7 +189,7 @@ fun CadastroScreen(cadastroScreenViewModel: CadastroScreenViewModel, navControll
                             )
                             RadioButton(
                                 selected = sexo == stringResource(id = R.string.sexF),
-                                onClick = {cadastroScreenViewModel.onSexoChanged("Feminino")},
+                                onClick = { cadastroScreenViewModel.onSexoChanged("Feminino") },
                                 colors = RadioButtonDefaults.colors(
                                     unselectedColor = Color.Gray,
                                     selectedColor = Color.Magenta
@@ -203,7 +201,7 @@ fun CadastroScreen(cadastroScreenViewModel: CadastroScreenViewModel, navControll
                             )
                             RadioButton(
                                 selected = sexo == stringResource(id = R.string.sexNB),
-                                onClick = {cadastroScreenViewModel.onSexoChanged("Não Binário")},
+                                onClick = { cadastroScreenViewModel.onSexoChanged("Não Binário") },
 
                                 colors = RadioButtonDefaults.colors(
                                     unselectedColor = Color.Gray,
@@ -238,14 +236,14 @@ fun CadastroScreen(cadastroScreenViewModel: CadastroScreenViewModel, navControll
                                 },
                             placeholder = {
                                 //if (abrigo.isEmpty()) {
-                                    Text(text = stringResource(id = R.string.list),
-                                        color = Color.Gray,
-                                        modifier = Modifier
-                                            .padding(start = 16.dp, end = 16.dp, top = 10.dp)
-                                            .clickable { isDropDownVisible = true })
+                                Text(text = stringResource(id = R.string.list),
+                                    color = Color.Gray,
+                                    modifier = Modifier
+                                        .padding(start = 16.dp, end = 16.dp, top = 10.dp)
+                                        .clickable { isDropDownVisible = true })
                                 //}
                             },
-                            )
+                        )
                         DropdownMenu(
                             expanded = isDropDownVisible,
                             onDismissRequest = { isDropDownVisible = false },
@@ -309,13 +307,13 @@ fun CadastroScreen(cadastroScreenViewModel: CadastroScreenViewModel, navControll
                     Row(verticalAlignment = Alignment.CenterVertically) {
                         Checkbox(
                             checked = terms,
-                            onCheckedChange = {cadastroScreenViewModel.onTermsAcepted(it)}
+                            onCheckedChange = { cadastroScreenViewModel.onTermsAcepted(it) }
                         )
                         Text(
                             text = stringResource(id = R.string.terms),
                             color = colorResource(id = R.color.link),
                             modifier = Modifier
-                                .clickable {navController.navigate("termos")}
+                                .clickable { navController.navigate("termos") }
                         )
                     }
                 }
@@ -323,21 +321,21 @@ fun CadastroScreen(cadastroScreenViewModel: CadastroScreenViewModel, navControll
                     Row {
                         Button(
                             onClick = {
-                                      val aluno = Aluno(
-                                          id = 0,
-                                          nome = name,
-                                          sobrenome = lastName,
-                                          dataNasc = date,
-                                          sexo = sexo,
-                                          email = email,
-                                          user = user,
-                                          password = password,
-                                          termosAcepted = terms
+                                val aluno = Aluno(
+                                    id = 0,
+                                    nome = name,
+                                    sobrenome = lastName,
+                                    dataNasc = date,
+                                    sexo = sexo,
+                                    email = email,
+                                    user = user,
+                                    password = password,
+                                    termosAcepted = terms
 
-                                      )
+                                )
                                 alunoRepository.salvar(aluno)
                                 navController.navigate("cursos/M4th3uz")
-                                      },
+                            },
                             modifier = Modifier
                                 .fillMaxWidth()
                                 .padding(start = 16.dp, end = 16.dp, top = 10.dp)
@@ -348,7 +346,6 @@ fun CadastroScreen(cadastroScreenViewModel: CadastroScreenViewModel, navControll
                                 Text(
                                     text = stringResource(id = R.string.entrar),
                                     textAlign = TextAlign.Center,
-                                    fontWeight = FontWeight.Bold,
                                     color = Color.White,
                                     fontSize = 23.sp,
                                     fontFamily = BlackOpsOne
@@ -360,6 +357,7 @@ fun CadastroScreen(cadastroScreenViewModel: CadastroScreenViewModel, navControll
             }
         }
     }
+}
 
 
 

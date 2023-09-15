@@ -47,9 +47,7 @@ fun LoginScreen(loginScreenViewModel: LoginScreenViewModel, navController: NavCo
     Box(
         modifier = Modifier.fillMaxSize()
     ) {
-        Column(
-            modifier = Modifier.fillMaxWidth()
-        ) {
+        Column {
             Column(
                 horizontalAlignment = Alignment.CenterHorizontally,
                 modifier = Modifier.fillMaxWidth()
@@ -64,7 +62,6 @@ fun LoginScreen(loginScreenViewModel: LoginScreenViewModel, navController: NavCo
                         .background(Color.Black)
                 )
             }
-
             LazyColumn(
                 modifier = Modifier
                     .fillMaxSize()
