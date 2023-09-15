@@ -1,0 +1,39 @@
+<resources>
+    <string name="app_name">TechAbrigo</string>
+    <string name="btn_login">Login</string>
+    <string name="username">Username</string>
+    <string name="password">Password</string>
+    <string name="email">E-mail</string>
+    <string name="missed_password">Esqueci minha senha!</string>
+    <string name="not_user">Ainda não tem acesso de aluno? Cadastre-se</string>
+    <string name="not_patrocinador">Quer ser um Abrigo Parceiro ou Doador? Cadastre-se</string>
+    <string name="here">aqui!</string>
+    <string name="name">Nome</string>
+    <string name="last_name">Sobrenome</string>
+    <string name="birthday">Data de Nascimento</string>
+    <string name="sexM">Masculino</string>
+    <string name="sexF">Feminino</string>
+    <string name="sexNB">Não Binário</string>
+    <string name="sex">Sexo</string>
+    <string name="list">Lista de Abrigos</string>
+    <string name="entrar">Entrar</string>
+    <string name="terms">Termos de uso</string>
+    <string name="cadastro">Cadastro</string>
+    <string name="trilhas">Trilhas</string>
+    <string name="top5">TOP 5</string>
+    <string name="fast_courses">FAST COURSES</string>
+    <string name="other_courses">OUTROS CURSOS</string>
+    <string name="hello">Olá,</string>
+    <string name="tech_Abrigo">TECH ABRIGO</string>
+    <string name="matheus">Matheus Silva</string>
+    <string name="user_matheus">M4th3uz</string>
+    <string name="meus_dados">Meus Dados</string>
+    <string name="meus_cursos">Meus Cursos</string>
+    <string name="xp">XP</string>
+    <string name="jobs">JOBS</string>
+    <string name="cursos">CURSOS</string>
+    <string name="news">NEWS</string>
+    <string name="menu">MENU</string>
+    <string name="logout">Sair</string>
+
+</resources>
