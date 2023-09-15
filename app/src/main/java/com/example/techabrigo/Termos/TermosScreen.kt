@@ -26,46 +26,49 @@ import com.example.techabrigo.ui.theme.BlackOpsOne
 
 @Composable
 fun TermosScreen(navController: NavController) {
+    Box(
+        modifier = Modifier.fillMaxSize()
 
-    Column(
-        modifier = Modifier.fillMaxWidth()
     ) {
         Column(
-            horizontalAlignment = Alignment.CenterHorizontally,
             modifier = Modifier.fillMaxWidth()
         ) {
-            TopAppBar(
-                backgroundColor = colorResource(id = R.color.tech_color),
-                modifier = Modifier
-                    .fillMaxWidth(),
-                title = {
-                    Text(
-                        text = stringResource(id = R.string.terms),
-                        color = Color.White,
-                        fontFamily = BlackOpsOne,
-                        //fontWeight = FontWeight.Bold
-                    )
-                },
-                navigationIcon = {
-                    IconButton(
-                        onClick = {navController.navigate("cadastro")}
-                    ) {
-                        Icon(
-                            imageVector = Icons.Default.KeyboardArrowLeft,
-                            contentDescription = "Back",
-                            tint = Color.White
+            Column(
+                horizontalAlignment = Alignment.CenterHorizontally,
+                modifier = Modifier.fillMaxWidth()
+            ) {
+                TopAppBar(
+                    backgroundColor = colorResource(id = R.color.tech_color),
+                    modifier = Modifier
+                        .fillMaxWidth(),
+                    title = {
+                        Text(
+                            text = stringResource(id = R.string.terms),
+                            color = Color.White,
+                            fontFamily = BlackOpsOne,
                         )
+                    },
+                    navigationIcon = {
+                        IconButton(
+                            onClick = {navController.navigate("cadastro")}
+                        ) {
+                            Icon(
+                                imageVector = Icons.Default.KeyboardArrowLeft,
+                                contentDescription = "Back",
+                                tint = Color.White
+                            )
+                        }
                     }
+                )
+            }
+            AndroidView(factory = { context ->
+                WebView(context).apply {
+                    webViewClient = WebViewClient()
+                    loadUrl("file:///android_res/raw/termos_de_uso.html")
                 }
+            },
+                modifier = Modifier.fillMaxSize()
             )
         }
-        AndroidView(factory = { context ->
-            WebView(context).apply {
-                webViewClient = WebViewClient()
-                loadUrl("file:///android_res/raw/termos_de_uso.html")
-            }
-        },
-            modifier = Modifier.fillMaxSize()
-        )
     }
 }

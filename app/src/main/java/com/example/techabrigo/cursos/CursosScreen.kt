@@ -52,7 +52,9 @@ import com.example.techabrigo.ui.theme.BlackOpsOne
 @Composable
 fun CursosScreen(navController: NavController, user: String) {
 
-    Box {
+    Box(
+        modifier = Modifier.fillMaxSize()
+    ){
         Column {
             TopAppBar(
                 backgroundColor = colorResource(id = R.color.white),
