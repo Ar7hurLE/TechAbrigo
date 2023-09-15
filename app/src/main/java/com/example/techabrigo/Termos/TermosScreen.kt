@@ -28,7 +28,6 @@ import com.example.techabrigo.ui.theme.BlackOpsOne
 fun TermosScreen(navController: NavController) {
     Box(
         modifier = Modifier.fillMaxSize()
-
     ) {
         Column(
             modifier = Modifier.fillMaxWidth()

@@ -434,8 +434,8 @@ fun CursosScreen(navController: NavController, user: String) {
                         )
                     }
                 }
-    }
-}
+            }
+        }
 
 
 
