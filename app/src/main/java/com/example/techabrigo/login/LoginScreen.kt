@@ -104,7 +104,12 @@ fun LoginScreen(loginScreenViewModel: LoginScreenViewModel, navController: NavCo
                             .fillMaxWidth()
                             .padding(16.dp)
                             .background(Color.Transparent),
-                        atualizarValor = { loginScreenViewModel.onPasswordChanged(it) },
+                        atualizarValor = { newValue ->
+                            val maxLength = 8
+                            if (newValue.length <= maxLength) {
+                                loginScreenViewModel.onPasswordChanged(newValue)
+                            }
+                             },
                         isError = errorPassword
                     )
                     if (errorPassword) {
