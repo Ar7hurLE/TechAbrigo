@@ -10,5 +10,6 @@
     <color name="tech_color">#3A2269</color>
     <color name="link">#00B8FF</color>
     <color name="logout">#200B4A</color>
+    <color name="erro">#EC432E</color>
 
 </resources>

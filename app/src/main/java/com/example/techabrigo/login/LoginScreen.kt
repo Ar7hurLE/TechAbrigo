@@ -1,11 +1,11 @@
 package com.example.techabrigo.login
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
-import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
@@ -20,6 +20,9 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.livedata.observeAsState
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
@@ -43,6 +46,9 @@ import com.example.techabrigo.ui.theme.BlackOpsOne
 fun LoginScreen(loginScreenViewModel: LoginScreenViewModel, navController: NavController) {
     val user by loginScreenViewModel.user.observeAsState(initial = "")
     val password by loginScreenViewModel.password.observeAsState(initial = "")
+
+    var errorPassword by remember { mutableStateOf(false) }
+    var errorEmail by remember { mutableStateOf(false) }
 
     Box(
         modifier = Modifier.fillMaxSize()
@@ -68,6 +74,7 @@ fun LoginScreen(loginScreenViewModel: LoginScreenViewModel, navController: NavCo
                     .background(Color.Black)
             ) {
                 item {
+
                     UserTextField(
                         placeHolder = stringResource(id = R.string.username),
                         value = user,
@@ -76,8 +83,17 @@ fun LoginScreen(loginScreenViewModel: LoginScreenViewModel, navController: NavCo
                             .fillMaxWidth()
                             .padding(16.dp)
                             .background(Color.Transparent),
-                        atualizarValor = { loginScreenViewModel.onUserChanged(it)}
-                            )
+                        atualizarValor = { loginScreenViewModel.onUserChanged(it) },
+                        isError = errorEmail
+                    )
+                    if (errorEmail) {
+                        Text(
+                            text = "O email é obrigatória",
+                            modifier = Modifier.padding(start = 12.dp),
+                            fontSize = 12.sp,
+                            color = colorResource(id = R.color.erro),
+                        )
+                    }
                 }
                 item {
                     PasswordTextField(
@@ -88,9 +104,20 @@ fun LoginScreen(loginScreenViewModel: LoginScreenViewModel, navController: NavCo
                             .fillMaxWidth()
                             .padding(16.dp)
                             .background(Color.Transparent),
-                        atualizarValor = {loginScreenViewModel.onPasswordChanged(it)}
+                        atualizarValor = { loginScreenViewModel.onPasswordChanged(it) },
+                        isError = errorPassword
                     )
+                    if (errorPassword) {
+                        Text(
+                            text = "A senha é obrigatória",
+                            modifier = Modifier.padding(start = 12.dp),
+                            fontSize = 12.sp,
+                            color = colorResource(id = R.color.erro),
+                        )
+                    }
+                    Spacer(modifier = Modifier.height(24.dp))
                 }
+
                 item {
                     Row {
 
@@ -103,13 +130,19 @@ fun LoginScreen(loginScreenViewModel: LoginScreenViewModel, navController: NavCo
                         )
                     }
                 }
-                item { 
+                item {
                     Row {
                         Button(
                             onClick = {
-                                if(user == "M4th3uz" && password == "teste123"){
-                                navController.navigate("cursos/M4th3uz")}
-                                      },
+                                errorPassword = password.isEmpty()
+                                errorEmail = user.isEmpty()
+                                if (password.isEmpty() || user.isEmpty()) {
+                                    errorPassword
+                                    errorEmail
+                                } else if(user == "M4th3uz" && password == "teste123") {
+                                navController.navigate("cursos/M4th3uz")
+                            }
+                            },
                             modifier = Modifier
                                 .fillMaxWidth()
                                 .padding(16.dp, top = 50.dp, end = 16.dp)
@@ -146,7 +179,6 @@ fun LoginScreen(loginScreenViewModel: LoginScreenViewModel, navController: NavCo
                                 .padding(start = 3.dp)
                                 .clickable { navController.navigate("cadastro") }
                         )
-
                     }
                 }
                 item {
