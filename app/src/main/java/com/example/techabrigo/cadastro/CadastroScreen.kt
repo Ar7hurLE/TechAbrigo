@@ -43,7 +43,6 @@ import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.TextStyle
-import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
@@ -77,11 +76,18 @@ fun CadastroScreen(cadastroScreenViewModel: CadastroScreenViewModel, navControll
     var isDropDownVisible by remember { mutableStateOf(false) }
 
 
-        Box(
-            modifier = Modifier.fillMaxSize()
-        ) {
-            Column(
-           modifier = Modifier.fillMaxWidth()
+    var errorPassword by remember { mutableStateOf(false) }
+    var errorEmail by remember { mutableStateOf(false) }
+    var errorUsername by remember { mutableStateOf(false) }
+    var errorFullName by remember { mutableStateOf(false) }
+    var errorBirthday by remember { mutableStateOf(false) }
+
+
+    Box(
+        modifier = Modifier.fillMaxSize()
+    ) {
+        Column(
+            modifier = Modifier.fillMaxWidth()
         ) {
             Column(
                 horizontalAlignment = Alignment.CenterHorizontally,
@@ -135,8 +141,10 @@ fun CadastroScreen(cadastroScreenViewModel: CadastroScreenViewModel, navControll
                                 keyboardType = KeyboardType.Text,
                                 modifier = Modifier
                                     .padding(start = 16.dp, end = 16.dp, top = 10.dp)
-                                    .weight(1f)
+                                    .weight(1f),
+                                isError = errorFullName
                             )
+
                             CaixaDeEntrada(
                                 placeHolder = stringResource(id = R.string.last_name),
                                 value = lastName,
@@ -144,7 +152,16 @@ fun CadastroScreen(cadastroScreenViewModel: CadastroScreenViewModel, navControll
                                 keyboardType = KeyboardType.Text,
                                 modifier = Modifier
                                     .padding(start = 16.dp, end = 16.dp, top = 10.dp)
-                                    .weight(1f)
+                                    .weight(1f),
+                                isError = errorFullName
+                            )
+                        }
+                        if (errorFullName) {
+                            Text(
+                                text = "o nome e o sobrenome são obrigatórios",
+                                modifier = Modifier.padding(start = 12.dp),
+                                fontSize = 12.sp,
+                                color = colorResource(id = R.color.erro),
                             )
                         }
                     }
@@ -158,7 +175,16 @@ fun CadastroScreen(cadastroScreenViewModel: CadastroScreenViewModel, navControll
                             keyboardType = KeyboardType.Text,
                             modifier = Modifier
                                 .fillMaxWidth()
-                                .padding(start = 16.dp, end = 16.dp, top = 10.dp)
+                                .padding(start = 16.dp, end = 16.dp, top = 10.dp),
+                            isError = errorBirthday
+                        )
+                    }
+                    if (errorBirthday) {
+                        Text(
+                            text = "A data de nascimento é obrigatória",
+                            modifier = Modifier.padding(start = 12.dp),
+                            fontSize = 12.sp,
+                            color = colorResource(id = R.color.erro),
                         )
                     }
                 }
@@ -235,13 +261,11 @@ fun CadastroScreen(cadastroScreenViewModel: CadastroScreenViewModel, navControll
                                     isDropDownVisible = true
                                 },
                             placeholder = {
-                                //if (abrigo.isEmpty()) {
                                 Text(text = stringResource(id = R.string.list),
                                     color = Color.Gray,
                                     modifier = Modifier
                                         .padding(start = 16.dp, end = 16.dp, top = 10.dp)
                                         .clickable { isDropDownVisible = true })
-                                //}
                             },
                         )
                         DropdownMenu(
@@ -267,41 +291,74 @@ fun CadastroScreen(cadastroScreenViewModel: CadastroScreenViewModel, navControll
                         CaixaDeEntrada(
                             placeHolder = stringResource(id = R.string.email),
                             value = email,
-                            atualizarValor = { cadastroScreenViewModel.onEmailChanged(it) },
+                            atualizarValor = { newValue ->
+                                cadastroScreenViewModel.onEmailChanged(
+                                    newValue
+                                )
+                            },
+                            keyboardType = KeyboardType.Text,
+                            modifier = Modifier
+                                .fillMaxWidth()
+                                .padding(start = 16.dp, end = 16.dp, top = 10.dp),
+                            isError = errorEmail
+                        )
+                    }
+                    if (errorEmail) {
+                        Text(
+                            text = "O email é obrigatório",
+                            modifier = Modifier.padding(start = 12.dp),
+                            fontSize = 12.sp,
+                            color = colorResource(id = R.color.erro),
+                        )
+                    }
+                }
+
+                item {
+                    Row {
+
+                        UserTextField(
+                            placeHolder = stringResource(id = R.string.username),
+                            value = user,
                             keyboardType = KeyboardType.Text,
                             modifier = Modifier
                                 .fillMaxWidth()
                                 .padding(start = 16.dp, end = 16.dp, top = 10.dp)
+                                .background(Color.Transparent),
+                             atualizarValor = {cadastroScreenViewModel.onUserChanged(it)},
+                            isError = errorUsername
+                            )
+                    }
+                    if (errorUsername) {
+                        Text(
+                            text = "O username é obrigatório",
+                            modifier = Modifier.padding(start = 12.dp),
+                            fontSize = 12.sp,
+                            color = colorResource(id = R.color.erro),
                         )
                     }
                 }
-                item {
-                    UserTextField(
-                        placeHolder = stringResource(id = R.string.username),
-                        value = user,
-                        keyboardType = KeyboardType.Text,
-                        modifier = Modifier
-                            .fillMaxWidth()
-                            .padding(start = 16.dp, end = 16.dp, top = 10.dp)
-                            .background(Color.Transparent),
-                        atualizarValor = {
-                            cadastroScreenViewModel.onUserChanged(it)
-                        }
 
-                    )
-
-                }
                 item {
                     PasswordTextField(
                         placeHolder = stringResource(id = R.string.password),
                         value = password,
                         keyboardType = KeyboardType.Password,
+
                         modifier = Modifier
                             .fillMaxWidth()
                             .padding(start = 16.dp, end = 16.dp, top = 10.dp)
                             .background(Color.Transparent),
-                        atualizarValor = { cadastroScreenViewModel.onPasswordChanged(it) }
+                        atualizarValor = { cadastroScreenViewModel.onPasswordChanged(it) },
+                        isError = errorPassword
                     )
+                    if (errorPassword) {
+                        Text(
+                            text = "A senha é obrigatória",
+                            modifier = Modifier.padding(start = 12.dp),
+                            fontSize = 12.sp,
+                            color = colorResource(id = R.color.erro),
+                        )
+                    }
                 }
                 item {
                     Row(verticalAlignment = Alignment.CenterVertically) {
@@ -321,20 +378,32 @@ fun CadastroScreen(cadastroScreenViewModel: CadastroScreenViewModel, navControll
                     Row {
                         Button(
                             onClick = {
-                                val aluno = Aluno(
-                                    id = 0,
-                                    nome = name,
-                                    sobrenome = lastName,
-                                    dataNasc = date,
-                                    sexo = sexo,
-                                    email = email,
-                                    user = user,
-                                    password = password,
-                                    termosAcepted = terms
-
-                                )
-                                alunoRepository.salvar(aluno)
-                                navController.navigate("cursos/M4th3uz")
+                                errorFullName = name.isEmpty()
+                                errorBirthday = date.isEmpty()
+                                errorEmail = email.isEmpty()
+                                errorUsername = user.isEmpty()
+                                errorPassword = password.isEmpty()
+                                if (name.isEmpty() || date.isEmpty() || email.isEmpty() || user.isEmpty() || password.isEmpty()) {
+                                    errorFullName
+                                    errorBirthday
+                                    errorEmail
+                                    errorUsername
+                                    errorPassword
+                                } else {
+                                    val aluno = Aluno(
+                                        id = 0,
+                                        nome = name,
+                                        sobrenome = lastName,
+                                        dataNasc = date,
+                                        sexo = sexo,
+                                        email = email,
+                                        user = user,
+                                        password = password,
+                                        termosAcepted = terms
+                                    )
+                                    alunoRepository.salvar(aluno)
+                                    navController.navigate("cursos/M4th3uz")
+                                }
                             },
                             modifier = Modifier
                                 .fillMaxWidth()
@@ -358,6 +427,8 @@ fun CadastroScreen(cadastroScreenViewModel: CadastroScreenViewModel, navControll
         }
     }
 }
+
+
 
 
 

@@ -16,10 +16,16 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.text.input.PasswordVisualTransformation
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
+import com.example.techabrigo.R
+import java.lang.Error
+
 
 @Composable
 fun CaixaDeEntrada(
@@ -27,8 +33,11 @@ fun CaixaDeEntrada(
     value: String,
     atualizarValor: (String) -> Unit,
     keyboardType: KeyboardType,
-    modifier: Modifier
+    modifier: Modifier,
+    isError: Boolean
     ) {
+
+
         OutlinedTextField(
         value = value,
         onValueChange = atualizarValor,
@@ -42,16 +51,18 @@ fun CaixaDeEntrada(
     )
 }
 @Composable
+
 fun PasswordTextField(
     placeHolder: String,
     value: String,
     keyboardType: KeyboardType,
     modifier: Modifier,
-    atualizarValor: (String) -> Unit
+    atualizarValor: (String) -> Unit,
+    isError: Boolean
 ) {
     OutlinedTextField(
         value = value,
-        onValueChange = atualizarValor,
+        onValueChange =  atualizarValor,
         modifier = modifier,
         placeholder = { Text(text = placeHolder) },
         visualTransformation = PasswordVisualTransformation(),
@@ -69,8 +80,8 @@ fun UserTextField(
     value: String,
     keyboardType: KeyboardType,
     modifier: Modifier,
-    atualizarValor: (String) -> Unit
-
+    atualizarValor: (String) -> Unit,
+    isError: Boolean
 
     ) {
     OutlinedTextField(
@@ -86,4 +97,7 @@ fun UserTextField(
         )
     )
 }
+
+
+
 
