@@ -348,7 +348,12 @@ fun CadastroScreen(cadastroScreenViewModel: CadastroScreenViewModel, navControll
                             .fillMaxWidth()
                             .padding(start = 16.dp, end = 16.dp, top = 10.dp)
                             .background(Color.Transparent),
-                        atualizarValor = { cadastroScreenViewModel.onPasswordChanged(it) },
+                        atualizarValor = { newValue ->
+                            val maxLength = 8
+                            if (newValue.length <= maxLength) {
+                                cadastroScreenViewModel.onPasswordChanged(newValue)
+                            }
+                        },
                         isError = errorPassword
                     )
                     if (errorPassword) {
