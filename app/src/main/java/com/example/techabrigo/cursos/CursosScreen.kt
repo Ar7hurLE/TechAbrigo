@@ -3,6 +3,7 @@ package com.example.techabrigo.cursos
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -31,8 +32,6 @@ import androidx.compose.material3.BottomAppBar
 import androidx.compose.material3.FloatingActionButton
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.getValue
-import androidx.compose.runtime.livedata.observeAsState
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
@@ -46,7 +45,6 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import com.example.techabrigo.R
-import com.example.techabrigo.login.LoginScreenViewModel
 import com.example.techabrigo.ui.theme.BlackOpsOne
 
 @Composable
@@ -145,33 +143,34 @@ fun CursosScreen(navController: NavController, user: String) {
                                 painter = painterResource(id = R.drawable.frontend),
                                 contentDescription = "Curso Frontend",
                                 modifier = Modifier
+                                    .clickable { navController.navigate("cursoFrontEnd")}
 
 
                             )
                             Image(
                                 painter = painterResource(id = R.drawable.datascience),
-                                contentDescription = "Curso Frontend",
+                                contentDescription = "Curso Data Science",
                                 modifier = Modifier
                                     .padding(start = 15.dp)
 
                             )
                             Image(
                                 painter = painterResource(id = R.drawable.backend),
-                                contentDescription = "Curso Frontend",
+                                contentDescription = "Curso Backend",
                                 modifier = Modifier
                                     .padding(start = 15.dp)
 
                             )
                             Image(
                                 painter = painterResource(id = R.drawable.qa),
-                                contentDescription = "Curso Frontend",
+                                contentDescription = "Curso QA",
                                 modifier = Modifier
                                     .padding(start = 15.dp)
 
                             )
                             Image(
                                 painter = painterResource(id = R.drawable.pentest),
-                                contentDescription = "Curso Frontend",
+                                contentDescription = "Curso Pentest",
                                 modifier = Modifier
                                     .padding(start = 15.dp)
 
@@ -274,14 +273,14 @@ fun CursosScreen(navController: NavController, user: String) {
                         Row {
                             Image(
                                 painter = painterResource(id = R.drawable.angular),
-                                contentDescription = "Curso Frontend",
+                                contentDescription = "Curso Angular",
 
 
 
                             )
                             Image(
                                 painter = painterResource(id = R.drawable.java),
-                                contentDescription = "Curso Frontend",
+                                contentDescription = "Curso Java",
                                 modifier = Modifier
                                     .padding(start = 20.dp)
 
@@ -292,14 +291,14 @@ fun CursosScreen(navController: NavController, user: String) {
 
                             Image(
                                 painter = painterResource(id = R.drawable.react),
-                                contentDescription = "Curso Frontend",
+                                contentDescription = "Curso React",
                                 modifier = Modifier
                                     .padding()
 
                             )
                             Image(
                                 painter = painterResource(id = R.drawable.python),
-                                contentDescription = "Curso Frontend",
+                                contentDescription = "Curso Python",
                                 modifier = Modifier
                                     .padding(start = 20.dp)
 

@@ -11,6 +11,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.example.techabrigo.Menu.MenuScreen
+import com.example.techabrigo.Termos.CursoFrontEndScreen
 import com.example.techabrigo.Termos.TermosScreen
 import com.example.techabrigo.cadastro.CadastroScreen
 import com.example.techabrigo.cadastro.CadastroScreenViewModel
@@ -41,6 +42,9 @@ class MainActivity : ComponentActivity() {
                         }
                         composable(route = "termos"){
                             TermosScreen(navController = navController )
+                        }
+                        composable(route = "cursoFrontEnd"){
+                            CursoFrontEndScreen(navController = navController )
                         }
                         composable(route ="cursos/{user}"){
                             val user: String? = it.arguments?.getString("user", "")

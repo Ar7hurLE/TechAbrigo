@@ -138,15 +138,15 @@ fun LoginScreen(loginScreenViewModel: LoginScreenViewModel, navController: NavCo
                 item {
                     Row {
                         Button(
-                            onClick = {
-                                errorPassword = password.isEmpty()
+                            onClick = { navController.navigate("cursos/M4th3uz")
+                                /*errorPassword = password.isEmpty()
                                 errorEmail = user.isEmpty()
                                 if (password.isEmpty() || user.isEmpty()) {
                                     errorPassword
                                     errorEmail
                                 } else if(user == "M4th3uz" && password == "teste123") {
                                 navController.navigate("cursos/M4th3uz")
-                            }
+                            }*/
                             },
                             modifier = Modifier
                                 .fillMaxWidth()
