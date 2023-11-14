@@ -274,7 +274,8 @@ fun CursosScreen(navController: NavController, user: String) {
                             Image(
                                 painter = painterResource(id = R.drawable.angular),
                                 contentDescription = "Curso Angular",
-
+                                modifier = Modifier
+                                    .padding(end = 20.dp)
 
 
                             )
@@ -282,7 +283,7 @@ fun CursosScreen(navController: NavController, user: String) {
                                 painter = painterResource(id = R.drawable.java),
                                 contentDescription = "Curso Java",
                                 modifier = Modifier
-                                    .padding(start = 20.dp)
+                                    .padding()
 
                             )
                         }
@@ -293,14 +294,14 @@ fun CursosScreen(navController: NavController, user: String) {
                                 painter = painterResource(id = R.drawable.react),
                                 contentDescription = "Curso React",
                                 modifier = Modifier
-                                    .padding()
+                                    .padding(end = 20.dp)
 
                             )
                             Image(
                                 painter = painterResource(id = R.drawable.python),
                                 contentDescription = "Curso Python",
                                 modifier = Modifier
-                                    .padding(start = 20.dp)
+                                    .padding()
 
                             )
                         }

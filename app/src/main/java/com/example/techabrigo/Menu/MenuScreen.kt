@@ -10,6 +10,7 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.material.BottomAppBar
 import androidx.compose.material.Icon
 import androidx.compose.material.IconButton
@@ -44,10 +45,10 @@ import com.example.techabrigo.ui.theme.BlackOpsOne
 @Composable
 fun MenuScreen(navController: NavController, user: String) {
 
-    Box (
+    Box(
         modifier = Modifier
             .fillMaxSize()
-    ){
+    ) {
         Column {
             TopAppBar(
                 backgroundColor = colorResource(id = R.color.white),
@@ -121,243 +122,274 @@ fun MenuScreen(navController: NavController, user: String) {
                     }
                 }
             }
-            Column {
-                Button(onClick = { },
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .height(70.dp),
-                    shape = RectangleShape,
-                    colors = ButtonDefaults.buttonColors(containerColor = colorResource(id = R.color.tech_color)),
-                    content = {
-                        Row(
-                            verticalAlignment = Alignment.CenterVertically,
-                            modifier = Modifier
-                                .fillMaxWidth()
-                        ) {
-                            Icon(
-                                imageVector = Icons.Default.AccountBox,
-                                contentDescription = "Meus Dados",
-                                tint = Color.White,
-                                modifier = Modifier
-                                    .padding(start = 16.dp, end = 30.dp)
-                            )
-                            Text(
-                                text = stringResource(id = R.string.meus_dados),
-                                fontWeight = FontWeight.Bold,
-                                color = Color.White,
-                                fontFamily = BlackOpsOne,
-                                modifier = Modifier
-                                    .fillMaxWidth()
-                            )
-                        }
-                    }
-                )
-                Divider(
-                    color = Color.Black,
-                    thickness = 1.dp
-                )
-                Button(onClick = {},
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .height(70.dp),
-                    shape = RectangleShape,
-                    colors = ButtonDefaults.buttonColors(containerColor = colorResource(id = R.color.tech_color)),
-                    content = {
-                        Row(
-                            verticalAlignment = Alignment.CenterVertically,
-                            modifier = Modifier
-                                .fillMaxWidth()
-                        ) {
-                            Icon(
-                                imageVector = Icons.Default.CheckCircle,
-                                contentDescription = "Meus Cursos",
-                                tint = Color.White,
-                                modifier = Modifier
-                                    .padding(start = 16.dp, end = 30.dp)
-                            )
-                            Text(
-                                text = stringResource(id = R.string.meus_cursos),
-                                fontWeight = FontWeight.Bold,
-                                color = Color.White,
-                                fontFamily = BlackOpsOne,
-                                modifier = Modifier
-                                    .fillMaxWidth()
-                            )
-                        }
-                    }
-                )
-                Divider(
-                    color = Color.Black,
-                    thickness = 1.dp
-                )
-                Button(onClick = {},
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .height(70.dp),
-                    shape = RectangleShape,
-                    colors = ButtonDefaults.buttonColors(containerColor = colorResource(id = R.color.tech_color)),
-                    content = {
-                        Row(
-                            verticalAlignment = Alignment.CenterVertically,
-                            modifier = Modifier
-                                .fillMaxWidth()
-                        ) {
-                            Icon(
-                                imageVector = Icons.Default.Star,
-                                contentDescription = "XP",
-                                tint = Color.White,
-                                modifier = Modifier
-                                    .padding(start = 16.dp, end = 30.dp)
-                            )
-                            Text(
-                                text = stringResource(id = R.string.xp),
-                                fontWeight = FontWeight.Bold,
-                                color = Color.White,
-                                fontFamily = BlackOpsOne,
-                                modifier = Modifier
-                                    .fillMaxWidth()
-                            )
-                        }
-                    }
-                )
-                Divider(
-                    color = Color.Black,
-                    thickness = 1.dp
-                )
-                Button(onClick = {},
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .height(70.dp),
-                    shape = RectangleShape,
-                    colors = ButtonDefaults.buttonColors(containerColor = colorResource(id = R.color.tech_color)),
-                    content = {
-                        Row(
-                            verticalAlignment = Alignment.CenterVertically,
-                            modifier = Modifier
-                                .fillMaxWidth()
-                        ) {
-                            Icon(
-                                imageVector = Icons.Default.Warning,
-                                contentDescription = "Jobs",
-                                tint = Color.White,
-                                modifier = Modifier
-                                    .padding(start = 16.dp, end = 30.dp)
-                            )
-                            Text(
-                                text = stringResource(id = R.string.jobs),
-                                fontWeight = FontWeight.Bold,
-                                color = Color.White,
-                                fontFamily = BlackOpsOne,
-                                modifier = Modifier
-                                    .fillMaxWidth()
-                            )
-                        }
-                    }
-                )
-                Divider(
-                    color = Color.Black,
-                    thickness = 1.dp
-                )
-                Button(onClick = { navController.navigate("cursos/M4th3uz") },
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .height(70.dp),
-                    shape = RectangleShape,
-                    colors = ButtonDefaults.buttonColors(containerColor = colorResource(id = R.color.tech_color)),
-                    content = {
-                        Row(
-                            verticalAlignment = Alignment.CenterVertically,
-                            modifier = Modifier
-                                .fillMaxWidth()
-                        ) {
-                            Icon(
-                                imageVector = Icons.Default.PlayArrow,
-                                contentDescription = "Cursos",
-                                tint = Color.White,
-                                modifier = Modifier
-                                    .padding(start = 16.dp, end = 30.dp)
-                            )
-                            Text(
-                                text = stringResource(id = R.string.cursos),
-                                fontWeight = FontWeight.Bold,
-                                color = Color.White,
-                                fontFamily = BlackOpsOne,
-                                modifier = Modifier
-                                    .fillMaxWidth()
-                            )
-                        }
-                    }
-                )
-                Divider(
-                    color = Color.Black,
-                    thickness = 1.dp
-                )
-                Button(onClick = {},
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .height(70.dp),
-                    shape = RectangleShape,
-                    colors = ButtonDefaults.buttonColors(containerColor = colorResource(id = R.color.tech_color)),
-                    content = {
-                        Row(
-                            verticalAlignment = Alignment.CenterVertically,
-                            modifier = Modifier
-                                .fillMaxWidth()
-                        ) {
-                            Icon(
-                                imageVector = Icons.Default.Notifications,
-                                contentDescription = "News",
-                                tint = Color.White,
-                                modifier = Modifier
-                                    .padding(start = 16.dp, end = 30.dp)
-                            )
-                            Text(
-                                text = stringResource(id = R.string.news),
-                                fontWeight = FontWeight.Bold,
-                                color = Color.White,
-                                fontFamily = BlackOpsOne,
-                                modifier = Modifier
-                                    .fillMaxWidth()
-                            )
-                        }
-                    }
-                )
-                Divider(
-                    color = Color.Black,
-                    thickness = 1.dp
-                )
-            }
-            BottomAppBar(
-                backgroundColor = colorResource(id = R.color.logout),
+            LazyColumn(
                 modifier = Modifier
-                    .fillMaxWidth()
-                    .height(70.dp)
-                    .clickable { navController.navigate("login") },
-                content = {
-                    Row(
-                        verticalAlignment = Alignment.CenterVertically
-                    ) {
+                    .background(Color.Gray)
+                    .fillMaxSize()
 
-                        Icon(
-                            imageVector = Icons.Default.ExitToApp,
-                            contentDescription = "Sair",
-                            tint = Color.White,
-                            modifier = Modifier
-                                .padding(start = 16.dp, end = 30.dp)
-
-
-                        )
-                    }
-                    Text(
-                        text = stringResource(id = R.string.logout),
-                        color = Color.White,
-                        fontSize = 20.sp,
-                        fontWeight = FontWeight.Bold,
-                        fontFamily = BlackOpsOne
+            ) {
+                item {
+                    Button(onClick = { },
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .height(70.dp),
+                        shape = RectangleShape,
+                        colors = ButtonDefaults.buttonColors(containerColor = colorResource(id = R.color.tech_color)),
+                        content = {
+                            Row(
+                                verticalAlignment = Alignment.CenterVertically,
+                                modifier = Modifier
+                                    .fillMaxWidth()
+                            ) {
+                                Icon(
+                                    imageVector = Icons.Default.AccountBox,
+                                    contentDescription = "Meus Dados",
+                                    tint = Color.White,
+                                    modifier = Modifier
+                                        .padding(start = 16.dp, end = 30.dp)
+                                )
+                                Text(
+                                    text = stringResource(id = R.string.meus_dados),
+                                    fontWeight = FontWeight.Bold,
+                                    color = Color.White,
+                                    fontFamily = BlackOpsOne,
+                                    modifier = Modifier
+                                        .fillMaxWidth()
+                                )
+                            }
+                        }
                     )
-
                 }
-            )
+                item {
+                    Divider(
+                        color = Color.Black,
+                        thickness = 1.dp
+                    )
+                }
+                item {
+                    Button(onClick = {},
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .height(70.dp),
+                        shape = RectangleShape,
+                        colors = ButtonDefaults.buttonColors(containerColor = colorResource(id = R.color.tech_color)),
+                        content = {
+                            Row(
+                                verticalAlignment = Alignment.CenterVertically,
+                                modifier = Modifier
+                                    .fillMaxWidth()
+                            ) {
+                                Icon(
+                                    imageVector = Icons.Default.CheckCircle,
+                                    contentDescription = "Meus Cursos",
+                                    tint = Color.White,
+                                    modifier = Modifier
+                                        .padding(start = 16.dp, end = 30.dp)
+                                )
+                                Text(
+                                    text = stringResource(id = R.string.meus_cursos),
+                                    fontWeight = FontWeight.Bold,
+                                    color = Color.White,
+                                    fontFamily = BlackOpsOne,
+                                    modifier = Modifier
+                                        .fillMaxWidth()
+                                )
+                            }
+                        }
+                    )
+                }
+                item {
+                    Divider(
+                        color = Color.Black,
+                        thickness = 1.dp
+                    )
+                }
+                item {
+                    Button(onClick = {},
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .height(70.dp),
+                        shape = RectangleShape,
+                        colors = ButtonDefaults.buttonColors(containerColor = colorResource(id = R.color.tech_color)),
+                        content = {
+                            Row(
+                                verticalAlignment = Alignment.CenterVertically,
+                                modifier = Modifier
+                                    .fillMaxWidth()
+                            ) {
+                                Icon(
+                                    imageVector = Icons.Default.Star,
+                                    contentDescription = "XP",
+                                    tint = Color.White,
+                                    modifier = Modifier
+                                        .padding(start = 16.dp, end = 30.dp)
+                                )
+                                Text(
+                                    text = stringResource(id = R.string.xp),
+                                    fontWeight = FontWeight.Bold,
+                                    color = Color.White,
+                                    fontFamily = BlackOpsOne,
+                                    modifier = Modifier
+                                        .fillMaxWidth()
+                                )
+                            }
+                        }
+                    )
+                }
+                item {
+                    Divider(
+                        color = Color.Black,
+                        thickness = 1.dp
+                    )
+                }
+                item {
+                    Button(onClick = {},
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .height(70.dp),
+                        shape = RectangleShape,
+                        colors = ButtonDefaults.buttonColors(containerColor = colorResource(id = R.color.tech_color)),
+                        content = {
+                            Row(
+                                verticalAlignment = Alignment.CenterVertically,
+                                modifier = Modifier
+                                    .fillMaxWidth()
+                            ) {
+                                Icon(
+                                    imageVector = Icons.Default.Warning,
+                                    contentDescription = "Jobs",
+                                    tint = Color.White,
+                                    modifier = Modifier
+                                        .padding(start = 16.dp, end = 30.dp)
+                                )
+                                Text(
+                                    text = stringResource(id = R.string.jobs),
+                                    fontWeight = FontWeight.Bold,
+                                    color = Color.White,
+                                    fontFamily = BlackOpsOne,
+                                    modifier = Modifier
+                                        .fillMaxWidth()
+                                )
+                            }
+                        }
+                    )
+                }
+                item {
+                    Divider(
+                        color = Color.Black,
+                        thickness = 1.dp
+                    )
+                }
+                item {
+                    Button(onClick = { navController.navigate("cursos/M4th3uz") },
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .height(70.dp),
+                        shape = RectangleShape,
+                        colors = ButtonDefaults.buttonColors(containerColor = colorResource(id = R.color.tech_color)),
+                        content = {
+                            Row(
+                                verticalAlignment = Alignment.CenterVertically,
+                                modifier = Modifier
+                                    .fillMaxWidth()
+                            ) {
+                                Icon(
+                                    imageVector = Icons.Default.PlayArrow,
+                                    contentDescription = "Cursos",
+                                    tint = Color.White,
+                                    modifier = Modifier
+                                        .padding(start = 16.dp, end = 30.dp)
+                                )
+                                Text(
+                                    text = stringResource(id = R.string.cursos),
+                                    fontWeight = FontWeight.Bold,
+                                    color = Color.White,
+                                    fontFamily = BlackOpsOne,
+                                    modifier = Modifier
+                                        .fillMaxWidth()
+                                )
+                            }
+                        }
+                    )
+                }
+                item {
+                    Divider(
+                        color = Color.Black,
+                        thickness = 1.dp
+                    )
+                }
+                item {
+                    Button(onClick = {},
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .height(70.dp),
+                        shape = RectangleShape,
+                        colors = ButtonDefaults.buttonColors(containerColor = colorResource(id = R.color.tech_color)),
+                        content = {
+                            Row(
+                                verticalAlignment = Alignment.CenterVertically,
+                                modifier = Modifier
+                                    .fillMaxWidth()
+                            ) {
+                                Icon(
+                                    imageVector = Icons.Default.Notifications,
+                                    contentDescription = "News",
+                                    tint = Color.White,
+                                    modifier = Modifier
+                                        .padding(start = 16.dp, end = 30.dp)
+                                )
+                                Text(
+                                    text = stringResource(id = R.string.news),
+                                    fontWeight = FontWeight.Bold,
+                                    color = Color.White,
+                                    fontFamily = BlackOpsOne,
+                                    modifier = Modifier
+                                        .fillMaxWidth()
+                                )
+                            }
+                        }
+                    )
+                }
+                item {
+                    Divider(
+                        color = Color.Black,
+                        thickness = 1.dp
+                    )
+                }
+                item {
+                    BottomAppBar(
+                        backgroundColor = colorResource(id = R.color.logout),
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .height(70.dp)
+                            .clickable { navController.navigate("login") },
+                        content = {
+                            Row(
+                                verticalAlignment = Alignment.CenterVertically
+                            ) {
+
+                                Icon(
+                                    imageVector = Icons.Default.ExitToApp,
+                                    contentDescription = "Sair",
+                                    tint = Color.White,
+                                    modifier = Modifier
+                                        .padding(start = 16.dp, end = 30.dp)
+
+
+                                )
+                            }
+                            Text(
+                                text = stringResource(id = R.string.logout),
+                                color = Color.White,
+                                fontSize = 20.sp,
+                                fontWeight = FontWeight.Bold,
+                                fontFamily = BlackOpsOne
+                            )
+
+                        }
+                    )
+                }
+            }
         }
     }
 }
