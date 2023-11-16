@@ -43,7 +43,7 @@ import com.example.techabrigo.R
 import com.example.techabrigo.ui.theme.BlackOpsOne
 
 @Composable
-fun MenuScreen(navController: NavController, user: String) {
+fun MenuScreen(navController: NavController) {
 
     Box(
         modifier = Modifier
@@ -60,7 +60,7 @@ fun MenuScreen(navController: NavController, user: String) {
                     ) {
                         IconButton(
                             onClick = {
-                                navController.navigate("cursos/M4th3uz")
+                                navController.navigate("cursos")
                             }
                         ) {
                             Icon(
@@ -114,11 +114,11 @@ fun MenuScreen(navController: NavController, user: String) {
                             fontFamily = BlackOpsOne,
                             color = Color.White
                         )
-                        Text(
+                        /*Text(
                             text = "$user",
                             fontFamily = BlackOpsOne,
                             color = Color.Yellow
-                        )
+                        )*/
                     }
                 }
             }
@@ -281,7 +281,7 @@ fun MenuScreen(navController: NavController, user: String) {
                     )
                 }
                 item {
-                    Button(onClick = { navController.navigate("cursos/M4th3uz") },
+                    Button(onClick = { navController.navigate("cursos") },
                         modifier = Modifier
                             .fillMaxWidth()
                             .height(70.dp),

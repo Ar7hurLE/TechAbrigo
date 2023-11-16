@@ -1,5 +1,6 @@
 package com.example.techabrigo.cursos
 
+import YoutubeVideoPlayer
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
@@ -14,7 +15,6 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.offset
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.requiredHeight
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.LazyRow
 import androidx.compose.foundation.shape.CircleShape
@@ -34,9 +34,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.graphics.RectangleShape
 import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
@@ -48,7 +46,8 @@ import com.example.techabrigo.R
 import com.example.techabrigo.ui.theme.BlackOpsOne
 
 @Composable
-fun CursosScreen(navController: NavController, user: String) {
+fun CursosScreen(navController: NavController) {
+
 
     Box(
         modifier = Modifier.fillMaxSize()
@@ -60,7 +59,7 @@ fun CursosScreen(navController: NavController, user: String) {
                     .fillMaxWidth(),
                 title = {
                     Text(
-                        text = stringResource(id = R.string.hello) + " " + "$user",
+                        text = stringResource(id = R.string.hello),
                         color = Color.Black,
                         fontSize = 20.sp,
                         fontWeight = FontWeight.Bold,
@@ -69,7 +68,7 @@ fun CursosScreen(navController: NavController, user: String) {
                 },
                 actions = {
                     IconButton(
-                        onClick = { navController.navigate("menu/M4th3uz") }
+                        onClick = { navController.navigate("menu") }
                     ) {
                         Icon(
                             imageVector = Icons.Default.Person,
@@ -88,15 +87,7 @@ fun CursosScreen(navController: NavController, user: String) {
 
             ) {
                 item {
-                    Image(
-                        painter = painterResource(id = R.drawable.notification),
-                        contentDescription = "Screen Notification",
-                        modifier = Modifier
-                            .clip(RectangleShape)
-                            .requiredHeight(200.dp)
-                            .fillMaxWidth()
-                            .background(Color.Black)
-                    )
+                        YoutubeVideoPlayer(videoId = "sMNOONR_uxM")
                 }
                 item {
                     Column(
@@ -417,7 +408,7 @@ fun CursosScreen(navController: NavController, user: String) {
                         modifier = Modifier
                     ){
                         FloatingActionButton(
-                            onClick = {navController.navigate("menu/M4th3uz") },
+                            onClick = {navController.navigate("menu") },
                             shape = CircleShape,
                             containerColor = colorResource(id = R.color.tech_color),
                             modifier = Modifier
