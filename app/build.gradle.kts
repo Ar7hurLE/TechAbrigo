@@ -86,8 +86,7 @@ dependencies {
     implementation ("androidx.compose.material:material:1.0.0")
 
     implementation ("androidx.webkit:webkit:1.5.0")
-
-
+    implementation ("com.pierfrancescosoffritti.androidyoutubeplayer:core:11.0.1")
 
 
 

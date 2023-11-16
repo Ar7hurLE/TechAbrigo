@@ -23,7 +23,7 @@
     <string name="top5">TOP 5</string>
     <string name="fast_courses">FAST COURSES</string>
     <string name="other_courses">OUTROS CURSOS</string>
-    <string name="hello">Olá,</string>
+    <string name="hello">Olá!</string>
     <string name="tech_Abrigo">TECH ABRIGO</string>
     <string name="matheus">Matheus Silva</string>
     <string name="user_matheus">M4th3uz</string>
@@ -35,6 +35,7 @@
     <string name="news">NEWS</string>
     <string name="menu">MENU</string>
     <string name="logout">Sair</string>
+    <string name="logout_trilha">Sair da Trilha</string>
     <string name="trilha_front">Trilha FrontEnd</string>
 
 

@@ -8,7 +8,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.viewinterop.AndroidView
 
-    @Composable
+@Composable
     fun YoutubeVideoPlayer(videoId: String) {
         val webView = WebView(LocalContext.current).apply {
             settings.javaScriptEnabled = true
@@ -76,4 +76,7 @@ import androidx.compose.ui.viewinterop.AndroidView
         </html>
     """.trimIndent()
     }
+data class Video(val title: String, val videoId: String){
+
+}
 

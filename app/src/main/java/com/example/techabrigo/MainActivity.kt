@@ -25,7 +25,6 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         setContent {
             TechAbrigoTheme {
-                // A surface container using the 'background' color from the theme
                 Surface(
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
@@ -46,14 +45,11 @@ class MainActivity : ComponentActivity() {
                         composable(route = "cursoFrontEnd"){
                             CursoFrontEndScreen(navController = navController )
                         }
-                        composable(route ="cursos/{user}"){
-                            val user: String? = it.arguments?.getString("user", "")
-                            CursosScreen(navController = navController, user!!)
+                        composable(route ="cursos"){
+                            CursosScreen(navController = navController)
                         }
-                        composable(route ="menu/{user}"){
-                            val user: String? = it.arguments?.getString("user", "")
-                            CursosScreen(navController = navController, user!!)
-                            MenuScreen(navController = navController, user!!)
+                        composable(route ="menu"){
+                            MenuScreen(navController = navController)
                         }
                     }
 
