@@ -50,7 +50,7 @@ fun CursoFrontEndScreen(navController: NavController) {
 
     var expandedVideo by rememberSaveable { mutableStateOf<Int?>(null) }
     val videos = listOf(
-        Video("01 - Instalando Ferramentas","HjYEjKWSbe8"),
+        Video("01 - Instalando Ferramentas","UForX7ehChM"),
         Video("02 - Seu primeiro código HTML","E6CdIawPTh0"),
         Video("03 - Parágrafos e Quebras","f6NTJdtEFOc"),
         Video("04 - Símbolos e Emoji no seu site","nhMdFe3WwYc"),
@@ -76,7 +76,7 @@ fun CursoFrontEndScreen(navController: NavController) {
                         .fillMaxWidth(),
                     title = {
                         Text(
-                            text = stringResource(id = R.string.trilha_back),
+                            text = stringResource(id = R.string.trilha_front),
                             color = Color.White,
                             fontFamily = BlackOpsOne,
                         )
@@ -170,7 +170,7 @@ fun CursoFrontEndScreen(navController: NavController) {
                             .background(Color(R.color.purple_100))
                             .height(100.dp)
                     ){
-                        Text(text = "JÁ JÁ A TRILHA ESTARÁ COMPLETA! ;)",
+                        Text(text = stringResource(id = R.string.aviso),
                             fontFamily = BlackOpsOne,
                             color = Color.White,
                             fontSize = 20.sp,

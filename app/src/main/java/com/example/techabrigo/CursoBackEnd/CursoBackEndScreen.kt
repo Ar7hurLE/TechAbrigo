@@ -169,7 +169,7 @@ fun CursoBackEndScreen(navController: NavController) {
                             .background(Color(R.color.purple_100))
                             .height(100.dp)
                     ){
-                        Text(text = "JÁ JÁ A TRILHA ESTARÁ COMPLETA! ;)",
+                        Text(text = stringResource(id = R.string.aviso),
                             fontFamily = BlackOpsOne,
                             color = Color.White,
                             fontSize = 20.sp,
