@@ -1,5 +1,4 @@
-package com.example.techabrigo.Termos
-
+package com.example.techabrigo.CursoBackEnd
 import Video
 import YoutubeVideoPlayer
 import androidx.compose.foundation.Image
@@ -46,7 +45,7 @@ import com.example.techabrigo.ui.theme.BlackOpsOne
 
 
 @Composable
-fun CursoFrontEndScreen(navController: NavController) {
+fun CursoBackEndScreen(navController: NavController) {
 
     var expandedVideo by rememberSaveable { mutableStateOf<Int?>(null) }
     val videos = listOf(
@@ -107,7 +106,7 @@ fun CursoFrontEndScreen(navController: NavController) {
                     ) {
                         Row {
                             Image(
-                                painter = painterResource(id = R.drawable.frontend),
+                                painter = painterResource(id = R.drawable.backend),
                                 contentDescription = "Screen Notification",
                                 modifier = Modifier
                                     .requiredHeight(200.dp)
@@ -115,7 +114,7 @@ fun CursoFrontEndScreen(navController: NavController) {
                             )
                             Column {
                                 Text(
-                                    text = stringResource(id = R.string.front),
+                                    text = stringResource(id = R.string.back ),
                                     color = Color.White,
                                     fontSize = 20.sp,
                                     fontFamily = BlackOpsOne,
@@ -177,7 +176,7 @@ fun CursoFrontEndScreen(navController: NavController) {
                             textAlign = TextAlign.Center,
                             modifier = Modifier
                                 .padding(top = 30.dp)
-                        )
+                            )
                     }
                 }
                 item {
