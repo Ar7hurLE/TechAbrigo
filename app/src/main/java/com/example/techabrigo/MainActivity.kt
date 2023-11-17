@@ -10,6 +10,8 @@ import androidx.compose.ui.Modifier
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import com.example.techabrigo.CursoBackEnd.CursoBackEndScreen
+import com.example.techabrigo.CursoQA.CursoQAScreen
 import com.example.techabrigo.Menu.MenuScreen
 import com.example.techabrigo.Termos.CursoFrontEndScreen
 import com.example.techabrigo.Termos.TermosScreen
@@ -50,6 +52,12 @@ class MainActivity : ComponentActivity() {
                         }
                         composable(route ="menu"){
                             MenuScreen(navController = navController)
+                        }
+                        composable(route ="cursoQA"){
+                            CursoQAScreen(navController = navController)
+                        }
+                        composable(route ="cursoBack"){
+                            CursoBackEndScreen(navController = navController)
                         }
                     }
 

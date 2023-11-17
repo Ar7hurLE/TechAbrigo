@@ -150,6 +150,7 @@ fun CursosScreen(navController: NavController) {
                                 contentDescription = "Curso Backend",
                                 modifier = Modifier
                                     .padding(start = 15.dp)
+                                    .clickable { navController.navigate("cursoBack") }
 
                             )
                             Image(
@@ -157,6 +158,7 @@ fun CursosScreen(navController: NavController) {
                                 contentDescription = "Curso QA",
                                 modifier = Modifier
                                     .padding(start = 15.dp)
+                                    .clickable { navController.navigate("cursoQA") }
 
                             )
                             Image(
