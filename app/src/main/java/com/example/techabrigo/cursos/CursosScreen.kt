@@ -1,6 +1,5 @@
 package com.example.techabrigo.cursos
 
-import YoutubeVideoPlayer
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
@@ -87,7 +86,12 @@ fun CursosScreen(navController: NavController) {
 
             ) {
                 item {
-                        YoutubeVideoPlayer(videoId = "sMNOONR_uxM")
+                    Image(painter = painterResource(id = R.drawable.new_apresentacao),
+                        contentDescription = "Apresentacao",
+                        modifier = Modifier
+                            .height(200.dp)
+                            .fillMaxWidth()
+                    )
                 }
                 item {
                     Column(
