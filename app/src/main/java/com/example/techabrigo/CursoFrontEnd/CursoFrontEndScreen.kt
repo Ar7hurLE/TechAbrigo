@@ -176,7 +176,7 @@ fun CursoFrontEndScreen(navController: NavController) {
                             fontSize = 20.sp,
                             textAlign = TextAlign.Center,
                             modifier = Modifier
-                                .padding(top = 30.dp)
+                                .padding(start = 16.dp, top = 30.dp, end = 16.dp)
                         )
                     }
                 }
