@@ -123,7 +123,7 @@ fun CursoFrontEndScreen(navController: NavController) {
                                         .padding(bottom = 10.dp)
                                 )
                                 Text(
-                                    text = stringResource(id = R.string.lorem_ipsum),
+                                    text = stringResource(id = R.string.descricao_front),
                                     color = Color.White,
                                     modifier = Modifier
                                         .padding(end = 10.dp)

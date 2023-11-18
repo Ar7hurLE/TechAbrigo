@@ -42,7 +42,9 @@
     <string name="back">Back-End</string>
     <string name="front">Front-End</string>
     <string name="title_qa">Quality Assurance</string>
-    <string name="lorem_ipsum">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac odio eu nisi consectetur tincidunt. Nullam vel semper augue. Nunc tincidunt, mauris at tristique tincidunt, velit mauris eleifend odio, nec hendrerit quam purus non libero</string>
+    <string name="descricao_qa">No contexto de cursos de Quality Assurance, o foco está em desenvolver habilidades e conhecimentos necessários para assegurar que os produtos ou serviços atendam aos padrões de qualidade estabelecidos.</string>
+    <string name="descricao_front">Cursos de Frontend geralmente abrangem habilidades e tecnologias necessárias para desenvolver a interface do usuário de um site ou aplicativo. O Frontend é a parte visível e interativa de uma aplicação, com a qual os usuários interagem.</string>
+    <string name="descricao_back">Cursos de backend são programas de ensino focados no desenvolvimento da lógica e da infraestrutura por trás de aplicativos e sites. O backend refere-se à parte que não está visível em um sistema, responsável pelo processamento de dados, gerenciamento de servidores entre outras coisas.</string>
     <string name="aviso">JÁ JÁ A TRILHA ESTARÁ COMPLETA! ;)</string>
 
 

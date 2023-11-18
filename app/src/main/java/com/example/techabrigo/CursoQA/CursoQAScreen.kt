@@ -49,12 +49,13 @@ fun CursoQAScreen(navController: NavController) {
 
     var expandedVideo by rememberSaveable { mutableStateOf<Int?>(null) }
     val videos = listOf(
-        Video("01 - Instalando Ferramentas","HjYEjKWSbe8"),
-        Video("02 - Seu primeiro código HTML","E6CdIawPTh0"),
-        Video("03 - Parágrafos e Quebras","f6NTJdtEFOc"),
-        Video("04 - Símbolos e Emoji no seu site","nhMdFe3WwYc"),
-        Video("05 - Você tem o direito de usar qualquer imagem no seu site?","bDULqeGEvAw"),
+        Video("01 - Automação em Teste de Software","fPY5X3W6wbc"),
+        Video("02 - Testes Automatizados X Testes Manuais","cL3DJ_aPPxY"),
+        Video("03 - Considerações Acerca Da Automação","rWiEM_VhxLA"),
+        Video("04 - Princípios Da Automação De Testes","-1DQWtc5lN8"),
+        Video("05 - Elaborando O Script De Teste Record","270YUTsxuXA"),
     )
+
 
     Box(
         modifier = Modifier
@@ -122,7 +123,7 @@ fun CursoQAScreen(navController: NavController) {
                                         .padding(bottom = 10.dp)
                                 )
                                 Text(
-                                    text = stringResource(id = R.string.lorem_ipsum),
+                                    text = stringResource(id = R.string.descricao_qa),
                                     color = Color.White,
                                     modifier = Modifier
                                         .padding(end = 10.dp)

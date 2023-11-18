@@ -49,12 +49,13 @@ fun CursoBackEndScreen(navController: NavController) {
 
     var expandedVideo by rememberSaveable { mutableStateOf<Int?>(null) }
     val videos = listOf(
-        Video("01 - Instalando Ferramentas","HjYEjKWSbe8"),
-        Video("02 - Seu primeiro código HTML","E6CdIawPTh0"),
-        Video("03 - Parágrafos e Quebras","f6NTJdtEFOc"),
-        Video("04 - Símbolos e Emoji no seu site","nhMdFe3WwYc"),
-        Video("05 - Você tem o direito de usar qualquer imagem no seu site?","bDULqeGEvAw"),
+        Video("01 - Um pouco sobre a história do JAVA","sTX0UEplF54"),
+        Video("02 - Instalando o JDK no seu Computador","yWU5bm_pZzY"),
+        Video("03 - Primeiro Programa em Java","ijXXaIYsVx4"),
+        Video("04 - Tipos Primitivos e Manipulação de Dados","JEAQeT7YGs4"),
+        Video("05 - Operadores Aritméticos e Classe Math","W9V5wtOOZHs"),
     )
+
 
     Box(
         modifier = Modifier
@@ -122,7 +123,7 @@ fun CursoBackEndScreen(navController: NavController) {
                                         .padding(bottom = 10.dp)
                                 )
                                 Text(
-                                    text = stringResource(id = R.string.lorem_ipsum),
+                                    text = stringResource(id = R.string.descricao_back),
                                     color = Color.White,
                                     modifier = Modifier
                                         .padding(end = 10.dp)
