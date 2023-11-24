@@ -51,9 +51,28 @@ E clico em "aqui" da frase "Ainda não tem acesso de aluno? Cadastre-se aqui"<br
 E entro na tela de cadastro
 E clico em "Termos de uso"<br>
 Então devo ser direcionado para a tela de termos<br>
-
-
+  
+  
   ## _*Ambos os fluxos se preenchidos corretamente levarão para a tela de cursos_ 
+
+
+### Cenário de Acesso à trilha front-end Dado que estou na tela de cursos
+E clico em “front-end”<br>
+E acesso a trilha de frontend<br>
+Então vejo a lista de cursos e seleciono qual quero assistir<br>
+
+
+###Cenário de Acesso à trilha Back-end Dado que estou na tela de cursos
+E clico em “Back-end”<br>
+E acesso a trilha de backend<br>
+Então vejo a lista de cursos e seleciono qual quero assistir<br>
+
+
+###Cenário de Acesso à trilha QA
+Dado que estou na tela de cursos<br>
+E clico em “qa”<br>
+E acesso a trilha de qa<br>
+Então vejo a lista de cursos e seleciono qual quero assistir<br>
 
 
   # Telas disponíveis 
@@ -63,5 +82,9 @@ Então devo ser direcionado para a tela de termos<br>
   <img width="288" alt="Captura de Tela 2023-09-18 às 20 10 32" src="https://github.com/Ar7hurLE/TechAbrigo/assets/89464674/26fd5e74-cf5a-44f9-8449-cbc44659e2e3">
   <img width="288" alt="Captura de Tela 2023-09-18 às 20 10 07" src="https://github.com/Ar7hurLE/TechAbrigo/assets/89464674/8afedd4e-912f-4cc8-b3c7-16c6b5074eba">
   <img width="288" alt="Captura de Tela 2023-09-18 às 20 09 58" src="https://github.com/Ar7hurLE/TechAbrigo/assets/89464674/b5b09f8d-7923-49d2-bfbb-67199d21499b">
+  <img width="306" alt="Captura de Tela 2023-11-23 às 22 38 59" src="https://github.com/Ar7hurLE/TechAbrigo/assets/89464674/9bb2b02c-6438-4f17-aa60-42e88a24ff85">
+<img width="306" alt="Captura de Tela 2023-11-23 às 22 39 10" src="https://github.com/Ar7hurLE/TechAbrigo/assets/89464674/1faa2cb4-4cbb-463d-ad57-c07fcd5931ab">
+<img width="306" alt="Captura de Tela 2023-11-23 às 22 39 19" src="https://github.com/Ar7hurLE/TechAbrigo/assets/89464674/ce541f46-8591-408d-b356-2aef6d23f96b">
+
 
   
