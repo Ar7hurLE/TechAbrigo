@@ -407,7 +407,7 @@ fun CadastroScreen(cadastroScreenViewModel: CadastroScreenViewModel, navControll
                                         termosAcepted = terms
                                     )
                                     alunoRepository.salvar(aluno)
-                                    navController.navigate("cursos/M4th3uz")
+                                    navController.navigate("cursos")
                                 }
                             },
                             modifier = Modifier
